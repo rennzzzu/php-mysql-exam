@@ -1,0 +1,27 @@
+
+Display total number of albums sold per artist
+    SELECT 2022_sales 
+    FROM album_sales;  
+
+Display combined album sales per artist
+    SELECT artist, sum( 2022_sales ) as "sales" 
+    FROM album_sales group by artist;
+
+
+Display the top 1 artist who sold most combined album sales
+    SELECT artist, sum( 2022_sales ) as "sales" 
+    FROM album_sales group by artist 
+    ORDER BY 2022_sales 
+    DESC LIMIT 1;
+
+Display the top 10 albums per year based on their number of sales
+    SELECT album 
+    FROM album_sales 
+    ORDER BY 2022_sales DESC LIMIT 10;
+
+Display list of albums based on the searched artist
+    SELECT album 
+    FROM album_sales
+    WHERE artist = 'aespa';
+
+
